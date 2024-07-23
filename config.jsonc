@@ -87,6 +87,12 @@
             "key": "  Brightness ",
             "keyColor": "magenta"
         },
+        {   
+            "type": "command",    
+            "key": "  󱐋",
+            "keyColor": "cyan",
+            "text": "cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor"    // change cpu0 based on ur system
+        },
         {
             "type": "battery",
             "key": "  "
