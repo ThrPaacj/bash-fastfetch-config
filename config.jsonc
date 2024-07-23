@@ -12,9 +12,10 @@
             "type": "custom", // HardwareStart
             "format": "┌─────────── \u001b[1mHardware Information\u001b[0m ───────────┐" // `\u001b` is `\033`, or `\e`
         },
-        {
-            "type": "cpu",
-            "key": "  "
+        {   
+            "type": "command",    // "type": "cpu"       ADDED PATCH FOR AMD RYZEN MOBILE CPU
+            "key": "  ",
+            "text": "lscpu | grep 'Model name:' | awk -F': ' '{print $2}' | sed 's/ with.*//' | sed 's/^ *//'"  // "format": "{1}"
         },
         {
             "type": "gpu",
@@ -64,7 +65,7 @@
         },
         {
             "type": "custom",
-            "format": "├─────────────── \u001b[1mUptime / Age\u001b[0m ───────────────┤"
+            "format": "├────────────── \u001b[1mUptime / Age\u001b[0m ────────────────┤"
         },
         {
             "type": "command",
